@@ -141,8 +141,7 @@ class OrderService ...
 
 ### 마법 숫자를 기호 상수로 전환
 
--	특수 의미를 지닌 숫자가 있을 땐 의미를 살린 이름의 상수를 작성한 후 리터럴 숫자를 그 상수로 교체한다.
--	수정 전
+-	특수 의미를 지닌 숫자가 있을 땐 의미를 살린 이름의 상수를 작성한 후 리터럴 숫자를 그 상수로 교체한다.**수정 전**
 
 ```
 double potentialEnergy(double mass , double height) {
@@ -150,7 +149,7 @@ double potentialEnergy(double mass , double height) {
 }
 ```
 
--	수정 후
+**수정 후**
 
 ```
 static final double GRAVITATIONAL_CONSTANT = 9.81;
@@ -164,13 +163,13 @@ double potentialEnergy(double mass , double height) {
 
 -	public 필드가 있을 땐 그 필드를 private로 만들고 필드용 읽기 메서드와 쓰기 메서드를 작성한다.
 
--	수정 전
+**수정 전**
 
 ```
 public String name;
 ```
 
--	수정 후
+**수정 후**
 
 ```
 private String name;
@@ -182,7 +181,7 @@ public void setName(String arg) {name = arg;}
 
 -	메서드가 컬렉션을 반환할 땐 그 메서드가 읽기전용 뷰를 반환하게 수정하고 추가 메서드와 삭제 메서드를 작성한다.
 
--	수정 전
+**수정 전**
 
 ```
 class Course...
@@ -215,7 +214,7 @@ kent.getCourses().remove(refact);
 Assert.equals(3, kent.getCourses().size());
 ```
 
--	수정 후
+**수정 후**
 
 ```
 class Person {
@@ -244,7 +243,7 @@ kent.addCourse(new Course ("싱글몰트 위스키 음미하기’ true));
 
 -	기능에 영향을 미치는 숫자형 분류 부호가 든 클래스가 있을 땐 그 숫자를 새 클래스로 바꾼다.
 
--	수정 전
+**수정 전**
 
 ```
 public static final int 0 = 0;
@@ -254,7 +253,7 @@ public static final int AB = 3;
 private int bloodGroup;
 ```
 
--	수정 후
+**수정 후**
 
 ```
 public static final BloodGroup 0 = new BloodGroup(0);
@@ -286,7 +285,7 @@ code = code;
 
 ![하위클래스를 필드로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-subclass-with-fields.png)
 
--	수정 전
+**수정 전**
 
 ```
 abstract class Person {
@@ -303,7 +302,7 @@ class Male extends Person {
 }
 ```
 
--	수정 후
+**수정 후**
 
 ```
 class Person{
