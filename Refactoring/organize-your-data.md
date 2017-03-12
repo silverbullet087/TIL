@@ -182,7 +182,7 @@ public void setName(String arg) {name = arg;}
 
 -	메서드가 컬렉션을 반환할 땐 그 메서드가 읽기전용 뷰를 반환하게 수정하고 추가 메서드와 삭제 메서드를 작성한다.
 
--수정 전
+-	수정 전
 
 ```
 class Course...
@@ -215,7 +215,7 @@ kent.getCourses().remove(refact);
 Assert.equals(3, kent.getCourses().size());
 ```
 
--수정 후
+-	수정 후
 
 ```
 class Person {
