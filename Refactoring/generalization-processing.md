@@ -55,7 +55,7 @@
 
 ![템플릿 메서드 형성](http://silverbullet.kr/wp-content/uploads/2017/03/Form-Template-Method.png)
 
--	수정전
+**수정전**
 
 ```
 public class Customer {
@@ -102,7 +102,7 @@ public class TextStatement {
 }
 ```
 
--	수정 후
+**수정 후**
 
 ```
 public class Customer {
