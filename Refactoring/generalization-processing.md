@@ -57,7 +57,7 @@
 
 **수정전**
 
-```
+```java
 public class Customer {
     public String statement() {
         return new TextStatement().value(this);
@@ -68,7 +68,7 @@ public class Customer {
 }
 ```
 
-```
+```java
 public class HtmlStatement {
 
     public String value(Customer customer) {
@@ -85,7 +85,7 @@ public class HtmlStatement {
 }
 ```
 
-```
+```java
 public class TextStatement {
 
     public String value(Customer customer) {
@@ -104,7 +104,7 @@ public class TextStatement {
 
 **수정 후**
 
-```
+```java
 public class Customer {
     public String statement() {
         return new TextStatement().value(this );
@@ -115,7 +115,7 @@ public class Customer {
 }
 ```
 
-```
+```java
 public abstract class Statement {
     public abstract String headerString();
     public abstract String eachString();
@@ -134,7 +134,7 @@ public abstract class Statement {
 }
 ```
 
-```
+```java
 public class HtmlStatement extends Statement{
 
     @Override
@@ -154,7 +154,7 @@ public class HtmlStatement extends Statement{
 }
 ```
 
-```
+```java
 public class TextStatement extends Statement{
 
     @Override
