@@ -1,6 +1,8 @@
 조건문 간결화
 -------------
 
+-	**DevOOOOOOOOP 블로그 참고 :** [좋은 분기문(if) 작성법](http://redutan.github.io/2016/04/01/good-if)
+
 ### 조건문 쪼개기
 
 -	복잡한 조건문(if-then-else)이 있을땐 if, then, else 부분을 각각 메서드로 빼낸다.
@@ -114,7 +116,6 @@ double getPayAmount() {
 
 -	객체 타입에 따라 다른 기능을 실행하는 조건문이 있을 땐 조건문의 각 절을 하위클래스의 재정의 메서드 안으로 옮기고, 원본 메서드는 abstract 타입으로 수정한다.
 -	자세한 내용은 DevOOOOOOOOP 블로그 참고 : [Anti-OOP : if 를 피하고 싶어서](http://redutan.github.io/2016/03/31/anti-oop-if)
--	추가 참고 내용은 DevOOOOOOOOP 블로그 참고 : [좋은 분기문(if) 작성법](http://redutan.github.io/2016/04/01/good-if)
 
 ### Null 검사를 널 객체에 위임
 
