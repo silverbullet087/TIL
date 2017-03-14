@@ -17,14 +17,14 @@
 
 **수정 전**
 
-```
+```java
   double basePrice = as.getBasePrice();
   return (basePrice > 1000);
 ```
 
 **수정 후**
 
-```
+```java
   return (as.getBasePrice() > 1000);
 ```
 
@@ -35,7 +35,7 @@
 
 **수정 전**
 
-```
+```java
   if(row.getColum(0) == 'A'
     || (row.getColum(0) == 'B'
         && row.getColum(1) == 'Y'
@@ -48,14 +48,13 @@
 
 **수정 후**
 
-```
+```js
   boolean isLinkedApplication = row.getColum(0) == 'A'    //연계신청 했다
   boolean isNotLinkedApplication = row.getColum(0) == 'B' //연계신청 안했다
   boolean isSumApplication = row.getColum(0) == 'C'       //합산신청 했다
   boolean isMovingDateProper = row.getColum(1) == 'Y'     //이동일 적정
   boolean isAppropriateDueDate = row.getColum(2) == 'Y'   //신청기한 적절.
-  if(isLinkedApplication || (isNotLinkedApplication && isMovingDateProper && isAppropriateDueDate) || isSumApplication)
-  {        
+  if(isLinkedApplication || (isNotLinkedApplication && isMovingDateProper && isAppropriateDueDate) || isSumApplication) {        
   }
 ```
 
