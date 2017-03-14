@@ -48,7 +48,7 @@
 
 **수정 후**
 
-```js
+```java
   boolean isLinkedApplication = row.getColum(0) == 'A'    //연계신청 했다
   boolean isNotLinkedApplication = row.getColum(0) == 'B' //연계신청 안했다
   boolean isSumApplication = row.getColum(0) == 'C'       //합산신청 했다
