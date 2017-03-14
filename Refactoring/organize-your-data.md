@@ -9,22 +9,24 @@
 
 **수정 전**
 
-```
+```java
 private int low , high;
 boolean includes (int arg ) {
   return arg >= low && arg <= high;
 }
+
 ```
 
 **수정 후**
 
-```
+```java
 private int low , high;
 boolean includes (int arg) {
   return arg >= getLow() && arg <= getHigh();
 }
 int getLow() {return low;}
 int getHigh() {return high;}
+
 ```
 
 ### 데이터 값을 객체로 전환
@@ -35,7 +37,7 @@ int getHigh() {return high;}
 
 **수정 전**
 
-```
+```java
 // 개발 초기 단계에서는 단순 정보를 간단한 데이터 항목으로 표현. Order 객체로 데이터 Get한다.
 class Order {
   public Order (String customer) {
@@ -60,11 +62,12 @@ class OrderService ...
     return result;
   }
 ...
+
 ```
 
 **수정 후**
 
-```
+```java
 // 간단한 항목이 점점 복잡해진다(ex.형식화,지역번호 추출등). 항목객체(Customer)를 추가하여 항목들을 객체로 관리한다.
 
 // Order 객체 수정.
@@ -102,19 +105,16 @@ class OrderService ...
     return result;
   }
 ...
+
 ```
 
 ### 값을 참조로 전환
 
--	객체는 참조객체와 값 객체로 분류 할 수 있다. 참조 객체는 고객이나 계좌 같은 것이다.
--	클래스에 같은 인스턴스가 많이 들어 있어서 이것들을 하나의 객체로 바꿔야 할 땐 그 객체를 참조 객체로 전환한다.
--	고객이나 계좌 같이 현실에서 한 객체 대응하는 경우, 개념상 동일한 고객에 주문이 여러 개 있을 경우 하나의 객체만 사용하게끔 수정해야한다. `생성자를 팩토리 메서드로 전환`으로 하나의 객체만 있도록 한다.
+-	객체는 참조객체와 값 객체로 분류 할 수 있다. 참조 객체는 고객이나 계좌 같은 것이다. - 클래스에 같은 인스턴스가 많이 들어 있어서 이것들을 하나의 객체로 바꿔야 할 땐 그 객체를 참조 객체로 전환한다. - 고객이나 계좌 같이 현실에서 한 객체 대응하는 경우, 개념상 동일한 고객에 주문이 여러 개 있을 경우 하나의 객체만 사용하게끔 수정해야한다. `생성자를 팩토리 메서드로 전환`으로 하나의 객체만 있도록 한다.
 
 ### 참조를 값으로 전환
 
--	`값 객체` : 아주 작고 단순한 객체이다. 객체를 마치 값처럼 사용하는 것이다. 값 5에 또다른 값 5를 더하는 오퍼레이션을 실행하면, 5가 10으로 변하는 것이 아니라 10이라는 새로운 값이 만들어지는 것처럼, 값 객체 패턴에서도 값 객체에 어떤 오퍼레이션을 가하면, 그 값 객체가 변하는 것이 아니라 새로운 값 객체를 리턴하게 된다.
--	참조 객체가 작고 수정할 수 없고 관리하기 힘들 땐 그 참조 객체를 값 객체로 만든다.
--	참조 객체를 사용한 작업이 복잡해지는 순간이 참조를 값으로 바꿔야 할 시점이다.
+-	`값 객체` : 아주 작고 단순한 객체이다. 객체를 마치 값처럼 사용하는 것이다. 값 5에 또다른 값 5를 더하는 오퍼레이션을 실행하면, 5가 10으로 변하는 것이 아니라 10이라는 새로운 값이 만들어지는 것처럼, 값 객체 패턴에서도 값 객체에 어떤 오퍼레이션을 가하면, 그 값 객체가 변하는 것이 아니라 새로운 값 객체를 리턴하게 된다. - 참조 객체가 작고 수정할 수 없고 관리하기 힘들 땐 그 참조 객체를 값 객체로 만든다. - 참조 객체를 사용한 작업이 복잡해지는 순간이 참조를 값으로 바꿔야 할 시점이다.
 
 ### 배열을 객체로 전환
 
@@ -122,9 +122,7 @@ class OrderService ...
 
 ### 관측 데이터 복제
 
--	도메인 데이터는 GUI 컨트롤 안에서만 사용 가능한데, 도메인 메서드가 그 데이터에 접근해야 할 땐 그 데이터를 도메인 객체로 복사하고, 양측의 데이터를 동기화하는 관측 인터페이스 observer를 작성한다.
--	비지니스 로직이 사용자 인터페이스 안에 들어 있는 2계층 방식으로 개발된 코드가 있다면 인터페이스에서 기능을 분리해야 한다.
--	`MVC 패턴`과 같이 분리해야 한다.
+-	도메인 데이터는 GUI 컨트롤 안에서만 사용 가능한데, 도메인 메서드가 그 데이터에 접근해야 할 땐 그 데이터를 도메인 객체로 복사하고, 양측의 데이터를 동기화하는 관측 인터페이스 observer를 작성한다. - 비지니스 로직이 사용자 인터페이스 안에 들어 있는 2계층 방식으로 개발된 코드가 있다면 인터페이스에서 기능을 분리해야 한다. - `MVC 패턴`과 같이 분리해야 한다.
 
 ### 클래스의 단방향 연결을 양방향으로 전환
 
@@ -132,31 +130,28 @@ class OrderService ...
 
 ### 클래스의 양방향 연결을 단방향으로 전환
 
--	두 클래스가 양방향으로 연결되어 있는데 한 클래스가 다른 클래스의 기능을 더 이상 사용하지 않게 됐을 땐 불필요한 방향의 연결을 끊는다.
--	양방향 연결은 쓸모가 많지만 대가가 따른다.
-	1.	복잡함이 더해진다.
-	2.	좀비 객체가 발생하기 쉽다. `좀비 객체`란 참조가 삭제되지 않아 제거 되어야 함에도 남아 떠도는 객체이다.
-	3.	양방향 연결로 인해 두 클래스는 서로 종속된다.
--	양방향 연결을 꼭 필요할 때만 사용해야 한다.
+-	두 클래스가 양방향으로 연결되어 있는데 한 클래스가 다른 클래스의 기능을 더 이상 사용하지 않게 됐을 땐 불필요한 방향의 연결을 끊는다. - 양방향 연결은 쓸모가 많지만 대가가 따른다. 1. 복잡함이 더해진다. 2. 좀비 객체가 발생하기 쉽다. `좀비 객체`란 참조가 삭제되지 않아 제거 되어야 함에도 남아 떠도는 객체이다. 3. 양방향 연결로 인해 두 클래스는 서로 종속된다. - 양방향 연결을 꼭 필요할 때만 사용해야 한다.
 
 ### 마법 숫자를 기호 상수로 전환
 
 -	특수 의미를 지닌 숫자가 있을 땐 의미를 살린 이름의 상수를 작성한 후 리터럴 숫자를 그 상수로 교체한다.**수정 전**
 
-```
+```java
 double potentialEnergy(double mass , double height) {
   return mass * 9.81 * height;
 }
+
 ```
 
 **수정 후**
 
-```
+```java
 static final double GRAVITATIONAL_CONSTANT = 9.81;
 
 double potentialEnergy(double mass , double height) {
   return mass * GRAVITATIONAL_CONSTANT * height;
 }
+
 ```
 
 ### 필드 캡슐화
@@ -165,16 +160,18 @@ double potentialEnergy(double mass , double height) {
 
 **수정 전**
 
-```
+```java
 public String name;
+
 ```
 
 **수정 후**
 
-```
+```java
 private String name;
 public String getName() {return name;}
 public void setName(String arg) {name = arg;}
+
 ```
 
 ### 컬렉션 캡슐화
@@ -183,7 +180,7 @@ public void setName(String arg) {name = arg;}
 
 **수정 전**
 
-```
+```java
 class Course...
   public Course (String name , boolean isAdvanced) {...};
   public boolean isAdvanced () {...};
@@ -212,11 +209,12 @@ kent.getCourses().add(new Course ("지독한 빈 정 거림", false));
 Assert.equals(4, kent.getCourses().size()) ;
 kent.getCourses().remove(refact);
 Assert.equals(3, kent.getCourses().size());
+
 ```
 
 **수정 후**
 
-```
+```java
 class Person {
   private Set courses = new HashSet();
 
@@ -233,6 +231,7 @@ Person kent = new Person();
 kent.addCourse(new Course ("스몰토크 프로그래밍’" fal se));
 kent.addCourse(new Course ("싱글몰트 위스키 음미하기’ true));
 ...
+
 ```
 
 ### 레코드를 데이터 클래스로 전환
@@ -245,17 +244,18 @@ kent.addCourse(new Course ("싱글몰트 위스키 음미하기’ true));
 
 **수정 전**
 
-```
+```java
 public static final int 0 = 0;
 public static final int A = 1;
 public static final int B = 2;
 public static final int AB = 3;
 private int bloodGroup;
+
 ```
 
 **수정 후**
 
-```
+```java
 public static final BloodGroup 0 = new BloodGroup(0);
 public static final BloodGroup A = new BloodGroup(1);
 public static final BloodGroup B = new BloodGroup(2);
@@ -265,6 +265,7 @@ private static final BloodGroup[] values = {O, A, B, AB};
 private final int code;
 private BloodGroup (int code ) {
 code = code;
+
 ```
 
 ### 분류 부호를 하위 클래스로 전환
@@ -287,7 +288,7 @@ code = code;
 
 **수정 전**
 
-```
+```java
 abstract class Person {
   abstract boolean isMale() ;
   abstract char getCode() ;
@@ -300,11 +301,12 @@ class Male extends Person {
     return "M";
   }
 }
+
 ```
 
 **수정 후**
 
-```
+```java
 class Person{
   private final boolean isMale ;
   private final char code;
