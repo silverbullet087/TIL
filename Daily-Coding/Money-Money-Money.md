@@ -37,7 +37,7 @@ public class Money {
 
 > 처음으로 Codewars에서 문제를 풀어 봤다. 금액 계산 공식을 몰라서 시간을 많이 소비 했다. 금액 계산 공신만 알면 쉬운 문제였다. 단, 단순히 돌아가게 코딩을 했더니 소스가 지저분하다. 개선해야할 부분이 많이 보인다.
 
-@Darnor Solution
+### @Darnor Solution
 
 ```java
 public class Money {
@@ -54,7 +54,7 @@ public class Money {
 
 > 아... 리팩토링 책에서 매개변수에 데이터 저장하는게 좋지 않다는 것을 봐서 principal 매개변수에 데이터를 저장하지 않고 annualAmount 변수를 사용했는데 그렇다 보니 소스가 더욱 더 지저분해졌다. principalAfter1stYear 변수를 굳이 사용할 필요가 없었는데 잘 못 사용을 해서 while문 조건문이 더 길어지고 while 내부 코드도 길어졌다. 그리고 계산 공식도 위 코드와 같이 개선할 수 있었는데 아쉽다.
 
-@huynhrichy Solution
+### @huynhrichy Solution
 
 ```java
 public class Money {
