@@ -7,11 +7,11 @@ Strategy 패턴
 -	Strategy 패턴의 등장인물
 
 	-	Strategy(전략)의 역할
-	-	Strategy는 전략을 이용하기 위한 인터페이스(API)를 결정한다.
+		-	Strategy는 전략을 이용하기 위한 인터페이스(API)를 결정한다.
 	-	ConcreteStrategy(구체적인 전략)의 역할
-	-	ConcreteStrategy는 Strategy의 인터페이스(API)를 실제로 구현한다. 여기서 구체적인 전략(작전,방책,알고리즘)을 실제로 프로그래밍한다.
+		-	ConcreteStrategy는 Strategy의 인터페이스(API)를 실제로 구현한다. 여기서 구체적인 전략(작전,방책,알고리즘)을 실제로 프로그래밍한다.
 	-	Context(문맥)
-	-	Context는 Strategy을 이용하는 역할이다. ConcreteStrategy의 인스턴스를 가지고 있으며 필요에 따라 그것을 이용한다.
+		-	Context는 Strategy을 이용하는 역할이다. ConcreteStrategy의 인스턴스를 가지고 있으며 필요에 따라 그것을 이용한다.
 
 ![Strategy 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Bridge-pattern-1.png)
 
