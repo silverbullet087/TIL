@@ -13,3 +13,11 @@ SUMMARY.md 파일을 추가해서 Gitbook을 만들었습니다. 여기에서 �
 ### About
 
 저의 자세한 정보는 저의 다른 블로그 [silverbullet.kr](http://silverbullet.kr/)에 접속하여 확인하실 수 있습니다.
+
+### Page
+
+-	[홈페이지](http://silverbullet.kr/)
+-	[Github](https://github.com/silverbullet087)
+-	[Twitter](https://twitter.com/SilverBullet21)
+-	[Facebook](https://www.facebook.com/kim.baekmin.5)
+-	[Instagram](https://www.instagram.com/silverbullet087/)
