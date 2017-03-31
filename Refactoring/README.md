@@ -1,5 +1,11 @@
 ![Refactoring-book](http://silverbullet.kr/wp-content/uploads/2017/03/21322571.jpg)
 
+-	책 제목 : 리팩토링 : 코드 품질을 개선하는 객체지향 사고법
+-	저자 : 마틴 파울러 저/김지원 역 | 한빛미디어 | 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
+-	http://www.yes24.com/24/goods/7951038?scode=032&OzSrank=1
+
+-	**위의 책을 읽고 공부한 내용을 요약 정리한 것이다.**
+
 목차
 ----
 
