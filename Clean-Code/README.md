@@ -1,5 +1,11 @@
 ![Clean Code](http://silverbullet.kr/wp-content/uploads/2017/03/cleanCode.jpg)
 
+-	책 제목 : Program, Programming, Programmer Clean Code 클린 코드 : 애자일 소프트웨어 장인 정신
+-	저자 : 로버트 C. 마틴 저/박재호,이해영 공역 | 인사이트(insight)
+-	http://www.yes24.com/24/goods/11681152?scode=032&OzSrank=1
+
+-	**위의 책을 읽고 공부한 내용을 요약 정리한 것이다.**
+
 목차
 ----
 
