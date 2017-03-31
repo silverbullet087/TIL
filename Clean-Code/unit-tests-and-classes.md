@@ -33,7 +33,7 @@
 -	F(Fast) : 테스트는 빨라야 한다.
 -	I(Independent) : 각 테스트는 서로 의존하면 안 된다.
 -	R(Repeatable) : 테스트는 어떤 환경에서도 반복 가능해야 한다.
--	S(Self-validating) : 테스트는 어떤 환경에서도 반복 가능해야 한다.
+-	S(Self-validating) : 테스트는 부울(boolean)값으로 결과를 내야한다. 성공 아니면 실패다.
 -	T(Timely) : 테스트는 적시에 작성해야한다.
 
 ---
