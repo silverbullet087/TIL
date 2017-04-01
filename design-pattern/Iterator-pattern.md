@@ -1,7 +1,7 @@
 Iterator 패턴
 -------------
 
-![반복자 패턴 클래스 다이어그램](http://silverbullet.kr/wp-content/uploads/2017/03/Iterator-pattern-class-diagram.png)
+![반복자 패턴 클래스 다이어그램](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzamh3SXpSejdwZk0)
 
 -	Iterator 패턴의 등장인물
 
