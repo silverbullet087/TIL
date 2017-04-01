@@ -5,7 +5,7 @@
 
 -	하나의 상속 계층이 두 작업을 동시에 수행할 땐 상속 계층을 하나 더 만들어서 위임을 통해 다른 계층을 호출한다.
 
-![상속 구조 정리](http://silverbullet.kr/wp-content/uploads/2017/03/Tease-Apart-Inheritance.png)
+![상속 구조 정리](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzQV80ZzhkbHNhenM)
 
 ### 절차 코드를 객체로 전환
 
@@ -20,4 +20,4 @@
 
 -	한 클래스에 기능이 너무 많고 일부분에라도 조건문이 많을 땐 각 조건에 해당하는 하위클래스를 작성해서 계층구조를 만든다.
 
-![계층구조 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Hierarch.png)
+![계층구조 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzRVZpN1MyUEFPS1U)
