@@ -4,7 +4,7 @@ Singleton 패턴
 -	지장한 클래스의 인스턴스가 '절대로' 1개밖에 존재하지 않는 것을 '보증'하고 싶을 때, 인스턴스가 1개 밖에 존재하지 않는 것을 프로그램상에 표현하고 싶을 때 인스턴스가 한개밖에 존재하지 않는 것을 보증하는 패턴이 `Singleton 패턴`이다.
 -	복수의 인스턴스가 존재하면 인스턴스들이 서로 영향을 미치고, 뜻하지 않은 버그가 발생할 가능성이 있다. 그러나 인스턴스가 1개밖에 없다라는 보증이 있으면 그 전제조건 아래에서 프로그래밍 할 수 있다.
 
-![Singleton 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Singleton-pattern.png)
+![Singleton 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzR3JKQ0pab0pyV0E)
 
 -	Singleton은 static 필드(클래스 변수)로서 Singleton 클래스의 인스턴스에서 초기화 된다.
 -	Singleton 클래스의 생성자는 private로 되어 있다.
