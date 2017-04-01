@@ -16,13 +16,13 @@ Builder 패턴
 	-	Client(의뢰인)의 역할
 		-	Builder 패턴을 이용하는 역할.
 
-![Builder 패턴-1](http://silverbullet.kr/wp-content/uploads/2017/03/builder-pattern-01.png)
+![Builder 패턴-1](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzUWZibmJPWFFYVjQ)
 
-![Builder 패턴-2](http://silverbullet.kr/wp-content/uploads/2017/03/builder-pattern-02.png)
+![Builder 패턴-2](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzWlhLUGZSVVppek0)
 
 -	예제
 
-![Builder 패턴-예제](http://silverbullet.kr/wp-content/uploads/2017/03/builder-pattern-03.png)
+![Builder 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzMGo1bVVmWVdIRUU)
 
 ```java
 public class Main {
