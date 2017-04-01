@@ -22,11 +22,11 @@ Bridge 패턴
 
 -	왼쪽 두 개가 기능의 클래스 계층이고 오른쪽의 두 개가 구현의 클래스 계층이다. 두 계층을 impl 필드가 중개한다.
 
-![Bridge 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Bridge-pattern-1.png)
+![Bridge 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzUE0xdlV3NmR2QzQ)
 
 -	예제
 
-![Bridge 패턴-예제](http://silverbullet.kr/wp-content/uploads/2017/03/Bridge-pattern-2.png)
+![Bridge 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzbk5nWTV3OXNjaTg)
 
 ```java
 public class Main {
