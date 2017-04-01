@@ -33,7 +33,7 @@ int getHigh() {return high;}
 
 -	데이터 항목에 데이터나 기능을 더 추가해야 할 때는 데이터 항목을 객체로 만든다.
 
-![데이터 값을 객체로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-data-value-with-object.png)
+![데이터 값을 객체로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzSGdVZW1Gdms5OGM)
 
 **수정 전**
 
@@ -276,19 +276,19 @@ code = code;
 
 -	클래스 기능에 영향을 주는 변경불가 분류 부호가 있을 땐 분류 부호를 하위클래스로 만든다.
 
-![분류 부호를 하위 클래스로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-type-code-with-subclasses.png)
+![분류 부호를 하위 클래스로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVXVlRU8ybElHLXM)
 
 ### 분류 부호를 상태/전략 패턴으로 전환
 
 -	분류 부호가 클래스의 영향을 주지만 하위클래스로 전환할 수 없을 땐 그 분류 부호를 상태 객체로 만든다.
 
-![분류 부호를 상태/전략 패턴으로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-type-code-with-state-strategy.png)
+![분류 부호를 상태/전략 패턴으로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzdWJFcndQNlFnejA)
 
 ### 하위클래스를 필드로 전환
 
 -	여러 하위클래스가 상수 데이터를 반환하는 메서드만 다를 땐 각 하위클래스의 메서드를 상위클래스 필드로 전환하고 하위클래스는 전부 삭제한다.
 
-![하위클래스를 필드로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-subclass-with-fields.png)
+![하위클래스를 필드로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVC1FUk9QcUdHRUk)
 
 **수정 전**
 
