@@ -9,11 +9,11 @@ Template method 패턴
 	-	ConcreteClass(구현 클래스)의 역할
 		-	AbstractClass 역할에서 정의되어 있는 추상 메소드를 구체적으로 구현한다. 여기서 구현한 메소드는 AbstractClass역의 템플릿 메소드에서 호출한다.
 
-![Template method 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Template-method-0.png)
+![Template method 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzUEFJUWVPM3AzMWc)
 
 -	예제
 
-![Template method 패턴-예제](http://silverbullet.kr/wp-content/uploads/2017/03/Template-method-1.png)
+![Template method 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzeDkzU2xCT1RtbzA)
 
 ```java
 public abstract class AbstractDisplay {
