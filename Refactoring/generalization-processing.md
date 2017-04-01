@@ -30,13 +30,13 @@
 -	객체가 생성된 후에는 객체의 클래스 `기반 기능`을 수정할 수 없다.
 -	클래스 기반 기능을 수정하려면 단순히 다른 각종 컴포넌트를 연결해서 `클래스 추출`을 실시한다.
 
-![하위클래스 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Subclass.png)
+![하위클래스 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzRENsR0M0SVpaZGs)
 
 ### 상위클래스 추출
 
 -	기능이 비슷한 두 클래스가 있을 땐 상위클래스를 작성하고 공통된 기능들을 그 상위클래스로 옮긴다.
 
-![상위클래스 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Superclass.png)
+![상위클래스 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzMU9BcWhKNlR1Rmc)
 
 ### 인터페이스 추출
 
@@ -53,7 +53,7 @@
 -	하위클래스 안의 두 메서드가 거의 비슷한 단계들을 같은 순서로 수행할 땐 그 단계들을 시그너처가 같은 두 개의 메서드로 만들어 두 원본 메서드를 같게 만든 후, 두 메서드를 상위클래스로 옮긴다.
 -	두 메서드가 똑같지는 않지만 거의 비슷한 단계를 같은 순서로 수행하는 경우 그 순서를 상위클래스로 옮기고 재정의를 통해 각 단계가 고유의 작업을 다른 방식으로 수행하게 하면 된다. 이러한 메서드를 `템플릿 메서드`라고 한다.
 
-![템플릿 메서드 형성](http://silverbullet.kr/wp-content/uploads/2017/03/Form-Template-Method.png)
+![템플릿 메서드 형성](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzajcwQTVJRXpUZmM)
 
 **수정전**
 
