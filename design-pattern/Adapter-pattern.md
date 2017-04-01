@@ -20,11 +20,11 @@ Adapter 패턴
 
 #### 1. 상속을 사용한 Adapter 패턴
 
-![상속을 사용한 Adapter 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Adapter-Pattern-Inheritance.png)
+![상속을 사용한 Adapter 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzOEpsY0U2QWprWjg)
 
 -	예제
 
-![상속을 사용한 Adapter 패턴-1](http://silverbullet.kr/wp-content/uploads/2017/03/Adapter-Pattern-Inheritance-1.png)
+![상속을 사용한 Adapter 패턴-1](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzTk51Q2cwTng3MzA)
 
 ```java
 public class Main {
@@ -72,11 +72,11 @@ public class Banner {
 
 #### 2. 위임을 사용한 Adapter 패턴
 
-![위임을 사용한 Adapter 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Adapter-Pattern-Delegation.png)
+![위임을 사용한 Adapter 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzRmJVZWZpX3daa0E)
 
 -	예제
 
-![위임을 사용한 Adapter 패턴-1](http://silverbullet.kr/wp-content/uploads/2017/03/Adapter-Pattern-Delegation-1.png)
+![위임을 사용한 Adapter 패턴-1](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzMVV3UDZOcHBkX1k)
 
 ```java
 public abstract class Print {
