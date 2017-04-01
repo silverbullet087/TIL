@@ -14,11 +14,11 @@ Prototype 패턴
 	-	Client(이용자)의 역할
 	-	Client는 인스턴스를 복사하는 메소드를 이용해서 새로운 인스턴스를 만든다.
 
-![Prototype 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Prototype-pattern.png)
+![Prototype 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzU2xVYXFjc3l3Ylk)
 
 -	예제
 
-![Prototype 패턴-예제](http://silverbullet.kr/wp-content/uploads/2017/03/Prototype-pattern-0.png)
+![Prototype 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzR3hLbTZBVFZ1Z1U)
 
 ```java
 public class Main {
