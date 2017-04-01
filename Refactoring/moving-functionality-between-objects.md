@@ -22,13 +22,13 @@
 
 -	클라이언트가 객체의 대리 클래스를 호출할 땐 대리 클래스를 감추는 메서드를 서버에 작성한다.
 
-![대리 객체 은폐](http://silverbullet.kr/wp-content/uploads/2017/03/hide-delefate.png)
+![대리 객체 은폐](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzdklUV3NUa1QwZXc)
 
 ### 과잉 중개 메서드 제거
 
 -	클래스에 자잘한 위임이 너무 많을 땐 대리 객체를 클라이언트가 직접 호출하게 한다.
 
-![과잉 중개 메서드 제거](http://silverbullet.kr/wp-content/uploads/2017/03/remove-middle-man.png)
+![과잉 중개 메서드 제거](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzaGtjMmhDR1FJUE0)
 
 ### 외래 클래스에 메서드 추가
 
