@@ -22,13 +22,13 @@ Abstract Factory 패턴
 		-	listfactory 패키지 : ListFactory 클래스
 		-	tablefactory 패키지 : TableFactory 클래스
 
-![Abstract Factory 패턴](http://silverbullet.kr/wp-content/uploads/2017/03/Abstract-Factory-pattern-1.png)
+![Abstract Factory 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzbl9uUl85WlhrQzA)
 
 -	예제
 
-![Abstract Factory 패턴-예제](http://silverbullet.kr/wp-content/uploads/2017/03/Abstract-Factory-pattern-2.png)
+![Abstract Factory 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzR2h2dFRMUHM0YlE)
 
-![Abstract Factory 패턴-패키지](http://silverbullet.kr/wp-content/uploads/2017/03/Abstract-Factory-pattern-package.png)
+![Abstract Factory 패턴-패키지](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzbDVUUll0VWVBQ0E)
 
 -	package AbstractFactory
 
