@@ -17,13 +17,13 @@
 
 -	값 반환 기능과 객체 상태 변경 기능이 한 메서드에 들어 있을 땐 질의 메서드와 변경 메서드를 분리한다.
 
-![상태 변경 메서드와 값 반환 메서드를 분리](http://silverbullet.kr/wp-content/uploads/2017/03/separate-query-from-modifier.png)
+![상태 변경 메서드와 값 반환 메서드를 분리](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzYkRXQ1g1UW0tS2M)
 
 ### 메서드를 매개변수로 전환
 
 -	여러 메서드가 기능이 비슷하고 안에 든 값만 다를 땐 서로 다른 값을 하나의 매개변수로 전달받는 하나의 메서드를 만든다.
 
-![메서드를 매개변수로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/parameterize-method.png)
+![메서드를 매개변수로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzcmotT3ptOWF0TXM)
 
 ### 매개변수를 메서드로 전환
 
