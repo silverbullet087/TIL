@@ -1,4 +1,4 @@
-![Refactoring-book](http://silverbullet.kr/wp-content/uploads/2017/03/21322571.jpg)
+![Refactoring-book](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzeDBqTURqeF9tYzA)
 
 -	책 제목 : 리팩토링 : 코드 품질을 개선하는 객체지향 사고법
 -	저자 : 마틴 파울러 저/김지원 역 | 한빛미디어 | 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
@@ -166,7 +166,7 @@
         && row.getColum(2) == 'Y'
         )
     || row.getColum(0) == 'C')
-  {        
+  {
   }
 ```
 
@@ -178,7 +178,7 @@
   boolean isSumApplication = row.getColum(0) == 'C'       //합산신청 했다
   boolean isMovingDateProper = row.getColum(1) == 'Y'     //이동일 적정
   boolean isAppropriateDueDate = row.getColum(2) == 'Y'   //신청기한 적절.
-  if(isLinkedApplication || (isNotLinkedApplication && isMovingDateProper && isAppropriateDueDate) || isSumApplication) {        
+  if(isLinkedApplication || (isNotLinkedApplication && isMovingDateProper && isAppropriateDueDate) || isSumApplication) {
   }
 ```
 
@@ -194,7 +194,7 @@
 
 ### 메서드를 메서드 객체로 전환
 
--	지역변수 때문에 메서드 추출을 적용할 수 없는 긴 메서드가 있을 땐 그 메서드 자체를 객체로 전환해서 모든 지역변수를 개체의 필드로 만들자 그런 다음 그 메서드를 개체 안의 여러 메서드로 쪼개면 된다.  
+-	지역변수 때문에 메서드 추출을 적용할 수 없는 긴 메서드가 있을 땐 그 메서드 자체를 객체로 전환해서 모든 지역변수를 개체의 필드로 만들자 그런 다음 그 메서드를 개체 안의 여러 메서드로 쪼개면 된다.
 
 ### 알고리즘 전환
 
@@ -224,13 +224,13 @@
 
 -	클라이언트가 객체의 대리 클래스를 호출할 땐 대리 클래스를 감추는 메서드를 서버에 작성한다.
 
-![대리 객체 은폐](http://silverbullet.kr/wp-content/uploads/2017/03/hide-delefate.png)
+![대리 객체 은폐](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzdklUV3NUa1QwZXc)
 
 ### 과잉 중개 메서드 제거
 
 -	클래스에 자잘한 위임이 너무 많을 땐 대리 객체를 클라이언트가 직접 호출하게 한다.
 
-![과잉 중개 메서드 제거](http://silverbullet.kr/wp-content/uploads/2017/03/remove-middle-man.png)
+![과잉 중개 메서드 제거](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzaGtjMmhDR1FJUE0)
 
 ### 외래 클래스에 메서드 추가
 
@@ -292,7 +292,7 @@ int getHigh() {return high;}
 
 -	데이터 항목에 데이터나 기능을 더 추가해야 할 때는 데이터 항목을 객체로 만든다.
 
-![데이터 값을 객체로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-data-value-with-object.png)
+![데이터 값을 객체로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzSGdVZW1Gdms5OGM)
 
 **수정 전**
 
@@ -535,19 +535,19 @@ code = code;
 
 -	클래스 기능에 영향을 주는 변경불가 분류 부호가 있을 땐 분류 부호를 하위클래스로 만든다.
 
-![분류 부호를 하위 클래스로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-type-code-with-subclasses.png)
+![분류 부호를 하위 클래스로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVXVlRU8ybElHLXM)
 
 ### 분류 부호를 상태/전략 패턴으로 전환
 
 -	분류 부호가 클래스의 영향을 주지만 하위클래스로 전환할 수 없을 땐 그 분류 부호를 상태 객체로 만든다.
 
-![분류 부호를 상태/전략 패턴으로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-type-code-with-state-strategy.png)
+![분류 부호를 상태/전략 패턴으로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzdWJFcndQNlFnejA)
 
 ### 하위클래스를 필드로 전환
 
 -	여러 하위클래스가 상수 데이터를 반환하는 메서드만 다를 땐 각 하위클래스의 메서드를 상위클래스 필드로 전환하고 하위클래스는 전부 삭제한다.
 
-![하위클래스를 필드로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/replace-subclass-with-fields.png)
+![하위클래스를 필드로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVC1FUk9QcUdHRUk)
 
 **수정 전**
 
@@ -657,7 +657,7 @@ if (isSpecialDealO) {
 
 ```java
 if (isSpecialDealO)
-  total = price * 0.95;  
+  total = price * 0.95;
 else
   total = price * 0.98;
 send() ;
@@ -731,13 +731,13 @@ double getPayAmount() {
 
 -	값 반환 기능과 객체 상태 변경 기능이 한 메서드에 들어 있을 땐 질의 메서드와 변경 메서드를 분리한다.
 
-![상태 변경 메서드와 값 반환 메서드를 분리](http://silverbullet.kr/wp-content/uploads/2017/03/separate-query-from-modifier.png)
+![상태 변경 메서드와 값 반환 메서드를 분리](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzYkRXQ1g1UW0tS2M)
 
 ### 메서드를 매개변수로 전환
 
 -	여러 메서드가 기능이 비슷하고 안에 든 값만 다를 땐 서로 다른 값을 하나의 매개변수로 전달받는 하나의 메서드를 만든다.
 
-![메서드를 매개변수로 전환](http://silverbullet.kr/wp-content/uploads/2017/03/parameterize-method.png)
+![메서드를 매개변수로 전환](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzcmotT3ptOWF0TXM)
 
 ### 매개변수를 메서드로 전환
 
@@ -813,13 +813,13 @@ double getPayAmount() {
 -	객체가 생성된 후에는 객체의 클래스 `기반 기능`을 수정할 수 없다.
 -	클래스 기반 기능을 수정하려면 단순히 다른 각종 컴포넌트를 연결해서 `클래스 추출`을 실시한다.
 
-![하위클래스 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Subclass.png)
+![하위클래스 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzRENsR0M0SVpaZGs)
 
 ### 상위클래스 추출
 
 -	기능이 비슷한 두 클래스가 있을 땐 상위클래스를 작성하고 공통된 기능들을 그 상위클래스로 옮긴다.
 
-![상위클래스 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Superclass.png)
+![상위클래스 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzMU9BcWhKNlR1Rmc)
 
 ### 인터페이스 추출
 
@@ -836,7 +836,7 @@ double getPayAmount() {
 -	하위클래스 안의 두 메서드가 거의 비슷한 단계들을 같은 순서로 수행할 땐 그 단계들을 시그너처가 같은 두 개의 메서드로 만들어 두 원본 메서드를 같게 만든 후, 두 메서드를 상위클래스로 옮긴다.
 -	두 메서드가 똑같지는 않지만 거의 비슷한 단계를 같은 순서로 수행하는 경우 그 순서를 상위클래스로 옮기고 재정의를 통해 각 단계가 고유의 작업을 다른 방식으로 수행하게 하면 된다. 이러한 메서드를 `템플릿 메서드`라고 한다.
 
-![템플릿 메서드 형성](http://silverbullet.kr/wp-content/uploads/2017/03/Form-Template-Method.png)
+![템플릿 메서드 형성](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzajcwQTVJRXpUZmM)
 
 **수정전**
 
@@ -973,7 +973,7 @@ public class TextStatement extends Statement{
 
 -	하나의 상속 계층이 두 작업을 동시에 수행할 땐 상속 계층을 하나 더 만들어서 위임을 통해 다른 계층을 호출한다.
 
-![상속 구조 정리](http://silverbullet.kr/wp-content/uploads/2017/03/Tease-Apart-Inheritance.png)
+![상속 구조 정리](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzQV80ZzhkbHNhenM)
 
 ### 절차 코드를 객체로 전환
 
@@ -988,4 +988,4 @@ public class TextStatement extends Statement{
 
 -	한 클래스에 기능이 너무 많고 일부분에라도 조건문이 많을 땐 각 조건에 해당하는 하위클래스를 작성해서 계층구조를 만든다.
 
-![계층구조 추출](http://silverbullet.kr/wp-content/uploads/2017/03/Extract-Hierarch.png)
+![계층구조 추출](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzRVZpN1MyUEFPS1U)
