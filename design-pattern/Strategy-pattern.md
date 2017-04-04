@@ -11,7 +11,7 @@ Strategy 패턴
 	-	ConcreteStrategy(구체적인 전략)의 역할
 		-	ConcreteStrategy는 Strategy의 인터페이스(API)를 실제로 구현한다. 여기서 구체적인 전략(작전,방책,알고리즘)을 실제로 프로그래밍한다.
 	-	Context(문맥)
-		-	Context는 Strategy을 이용하는 역할이다. ConcreteStrategy의 인스턴스를 가지고 있으며 필요에 따라 그것을 이용한다.
+		-	Context는 Strategy을 이용하는 역할이다. ConcreteStrategy의 인스턴스를 가지고 있으며 필요에 따라 그것을 이용한다.  
 
 ![Strategy 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVm5zLXdNZmU1UzA)
 
