@@ -13,11 +13,11 @@ Strategy 패턴
 	-	Context(문맥)
 		-	Context는 Strategy을 이용하는 역할이다. ConcreteStrategy의 인스턴스를 가지고 있으며 필요에 따라 그것을 이용한다.
 
-![Strategy 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzUE0xdlV3NmR2QzQ)
+![Strategy 패턴](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzVm5zLXdNZmU1UzA)
 
 -	예제
 
-![Strategy 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzbk5nWTV3OXNjaTg)
+![Strategy 패턴-예제](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzOEpFTWJUaE9keTQ)
 
 ```java
 public class Main {
