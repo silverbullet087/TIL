@@ -88,7 +88,7 @@ List<Apple> heavyApples = filter(inventory, new AppleWeightPredicate());
 List<Apple> redAndHeavyApples = filter(inventory, new AppleRedAndHeavyPredicate());
 ```
 
--	하지만 이 코드를 필터링하느라 많은 로직과 관계없는 코드가 추가되었다.
+-	하지만 이 코드를 필터링하느라 많은 로직과 관계없는 코드가 추가되었다.  
 
 ![불필요한 코드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzOW9BSU5OU1otV3c)
 
