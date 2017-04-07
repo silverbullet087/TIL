@@ -225,6 +225,124 @@ Apple a1 = c1.get();
 Function<Integer , Apple> c2 = Apple::new;
 Apple a2 = c2 . apply(110);
 
+// 위 코드는 다음과 같다.
 Function<Integer, Apple> c2 = (weight) -> new Apple(weight);
 Apple a2 = c2 . apply(110);
 ```
+
+```java
+List<Integer> weights = Arrays.asList(7 , 3 , 4 , 10);
+List<Apple> apples = map(weights, Apple::new);
+
+public static List<Apple> map(List<Integer> list, Function<Integer, Apple> f) {
+  List<Apple> result = new ArrayList<>();
+  for(Integer e : list) {
+    result.add(f.apply(e));
+  }
+  return result;
+}
+```
+
+### 람다, 메서드 레퍼런스 활용하기!
+
+#### 1단계: 코드 전달
+
+```java
+public class AppleComparator implements Comparator<Apple> {
+  public int compare(Apple al, Apple a2) {
+    return al.getWeight().compareTo(a2.getWeight());
+  }
+}
+inventory.sort(new AppleComparator());
+```
+
+#### 2단계: 익명 클래스 사용
+
+```java
+inventory.sort(new AppleComparator() {
+  public int compare(Apple al, Apple a2) {
+    return al.getWeight().compareTo(a2.getWeight());
+  }
+});
+```
+
+#### 3단계: 람다 표현식 사용
+
+```java
+inventory.sort((Apple al, Apple a2) -> al.getWeight().compareTo(a2.getWeight()));
+
+// 위 코드 다음 코드로 간소화(형식 추론)
+inventory.sort((al, a2) -> al.getWeight().compareTo(a2.getWeight()));
+
+// 위코드 한번 더 간소화
+// 1단계
+Comparator<Apple>) c = Comparator.comparing((Apple a) -> a.getWeight());
+// 2단계
+inventory.sort(comparing((a) -> a.getWeight()));
+```
+
+#### 4단계: 메서드 레퍼런스 사용
+
+```java
+inventory.sort(comparing(Apple::getWeight));
+```
+
+### 람다 표현식을 조합할 수 있는 유용한 메서드
+
+-	Comparator, Function, Predicate 같은 함수형 인터페이스는 람다 표현식을 조합할 수 있도록 유틸리티 메서드로 `디폴트 메서드`를 제공한다.
+
+#### Comparator 조합
+
+```java
+// 정렬
+Comparator<Apple>) c = Comparator.comparing(Apple::getWeight);
+
+// 역정렬
+Comparator<Apple>) c = Comparator.comparing(Apple::getWeight).reversed());;
+
+// Comparator 연결
+inventory.sort(comparing(Apple::getWeight)
+        .reversed()
+        .thenComparing(Apple::getCountry));
+```
+
+#### Predicate 조합
+
+-	negate, and, or 세가지 메서드 제공한다.
+
+```java
+// 결과 반전
+Predicate<Apple> notRedApple = redApple.negate();
+
+// 두 Predicate 객체 연결
+Predicate<Apple> redAndHeavyApple = redApple.and(a -> a.getWeight() > 158) ;
+```
+
+#### Function 조합
+
+```java
+Function<Integer, Integer> f = x -> x + 1;
+Function<Integer, Integer> g = x -> x * 2;
+Function<Integer, Integer> h = f.andThen(g);
+int result = h.apply(1); // 4 반환
+
+// 위인 인수전달과 반대로 전달
+Function<Integer, Integer> f = x -> x + 1;
+Function<Integer, Integer> g = x -> x * 2;
+Function<Integer, Integer> h = f.compose(g);
+int result = h.apply(1); // 3반환
+```
+
+### 요약
+
+-	`람다 표현식`은 익명 함수의 일종이다. 이름은 없지만, 파라미터 리스트, 바디, 반환 형식을 가지며 예외를 던질 수 있다.
+-	람다 표현식으로 간결한 코드를 구현할 수 있다.
+-	`함수형 인터페이스`는 하나의 추상 메서드만을 정의하는 인터페이스다.
+-	함수형 인터페이스를 기대하는 곳에서만 람다 표현식을 사용할 수 있다.
+-	람다 표현식을 이용해서 함수형 인터페이스의 추상 메서드를 즉석으로 제공할 수 있으며 `람다 표현식 전체가 함수형 인터페이스의 인스턴스로 취급된다.`
+-	java.util.function 패키지에서 소개하는 Predicate<T>, Function<T,R>, Supplier<T>, Consumer<T>, BinaryOperator<T> 등을 포함해서 자주 사용하는 다양한 인터페이스도 제공한다.
+-	자바 8은 Predicate<T>와 Function<T,R> 같은 제네릭 함수형 인터페이스와 관련한 박싱 동작을 피할 수 있도록 IntPredicate, IntToLongFunction 등과 같은 기본형 특화 인터페이스도 제공한다.
+-	실행 어라운드 패턴(예를 들면 자원 할당, 자원 정리 등 코드 중간에 실행해야 하는 메서드에 꼭 필요한 코드)을 람다와 활용하면 유연성과 재사용성을 추가로 얻을 수 있다.
+-	람다 표현식의 기대 형식을 대상 형식이라고 한다.
+-	메서드 레퍼런스를 이용하면 기존의 메서드 구현을 재사용하고 직접 전달할 수 있다.
+-	Comparator, Predicate, Function 같은 함수형 인터페이스는 람다 표현식을 조합할 수 있는 다양한 디폴트 메서드를 제공한다.
