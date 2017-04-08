@@ -70,7 +70,7 @@ static class AppleColorPredicate implements ApplePredicate{
 }
 ```
 
--	세 번째 시도: 추상적 조건으로 필터링
+#### 세 번째 시도: 추상적 조건으로 필터링
 
 ```java
 public static List<Apple> filter(List<Apple> inventory, ApplePredicate p){
@@ -111,13 +111,13 @@ List<Apple> redApples2 = filter(inventory, new ApplePredicate() {
 });
 ```
 
-### 다섯 번째 시도: 람다 표현식 사용
+#### 다섯 번째 시도: 람다 표현식 사용
 
 ```java
 List<Apple> result = filter(inventory, (Apple apple) -> "red".equals(apple.getColor()));
 ```
 
-### 여섯 번째 시도: 리스트 형식으로 추상화
+#### 여섯 번째 시도: 리스트 형식으로 추상화
 
 ```java
 public interface Predicate<T>{
