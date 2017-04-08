@@ -173,9 +173,9 @@ BiFunction <Apple, Apple, Integer> c3 =
 
 ```java
 // Predicate는 불 린 반환값을 강는다.
-Predicate<String> p = 5 -> list.add(s);
+Predicate<String> p = s -> list.add(s);
 // Consumer는 void 반환값을 갚는다.
-Consumer<String> b = 5 -> list.add(s);
+Consumer<String> b = s -> list.add(s);
 ```
 
 #### 형식 추론
