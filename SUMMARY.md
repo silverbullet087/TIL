@@ -36,3 +36,4 @@ Summary
 -	[자바 8](Java8/README.md)
 	-	[동작 파라미터화 코드 전달하기](Java8/Passing-the-behavior-parameterization-code.md)
 	-	[람다 표현식](Java8/Lambda-representation.md)
+	-	[스트림 소개](Java8/Introduction-to-streams.md)
