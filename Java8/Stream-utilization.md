@@ -95,7 +95,7 @@ List<String> uniqueCharacters =
 
 #### 프레디케이트가 적어도 한 요소와 일치하는지 확인
 
--	anyMatch를 이용한다. anyMatch는 불린을 반환하므로 최종 연산이다.
+-	`anyMatch`를 이용한다. anyMatch는 불린을 반환하므로 최종 연산이다.
 
 ```java
 if(menu.stream().anyMatch(Dish::isVegetarian)) {
@@ -105,7 +105,7 @@ if(menu.stream().anyMatch(Dish::isVegetarian)) {
 
 #### 프레디케이트가 모든 요소와 일치하는지 검사
 
--	allMatch 메서드는 anyMatch와 달리 스트림의 모든 요소가 주어진 프레디케이트와 일치하는지 검사한다.
+-	`allMatch` 메서드는 anyMatch와 달리 스트림의 모든 요소가 주어진 프레디케이트와 일치하는지 검사한다.
 
 ```java
 boolean isHealthy = menu.stream()
@@ -114,7 +114,7 @@ boolean isHealthy = menu.stream()
 
 #### noneMatch
 
--	allMatch와 반대로 일치하는 요소가 없음을 확인한다.
+-	allMatch 와 반대로 일치하는 요소가 없음을 확인한다.
 
 ```java
 boolean isHealthy = menu.stream()
@@ -123,7 +123,7 @@ boolean isHealthy = menu.stream()
 
 #### 요소 검색
 
--	findAny 메서드는 현재 스트림에서 임의의 요소를 반환한다. filter와 findAny를 이용해서 채식 요리를 선택할 수 있다.
+-	`findAny` 메서드는 현재 스트림에서 임의의 요소를 반환한다. filter와 findAny를 이용해서 채식 요리를 선택할 수 있다.
 
 ```java
 Optional<Dish> dish =
@@ -134,7 +134,7 @@ Optional<Dish> dish =
 
 #### 첫 번째 요소 찾기
 
--	findFirst 메서드 사용.
+-	`findFirst` 메서드 사용.
 
 ```java
 List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
@@ -144,3 +144,5 @@ Optional<Integer> firstSquareDivisibleByThree =
                                   .filter(x - > x % 3 == 8)
                                   .findFirst(); // 9
 ```
+
+> `findFirst`와 `findAny`는 일반적으로 결과과 같으나 병렬성 때문에 둘이 존재한다. 병렬 스트림에서는 제약이 없는 findAny를 사용한다.
