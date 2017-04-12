@@ -1,7 +1,42 @@
 스트림 활용
 -----------
 
-### 필터링과 슬라이싱
+목차
+----
+
+-	[필터링과 슬라이싱](#필터링과-슬라이싱)
+	-	[프레디케이트로 필터링](#프레디케이트로-필터링)
+	-	[고유 요소 필터링](#고유-요소-필터링)
+	-	[스트림 축소](#스트림-축소)
+	-	[요소 건너뛰기](#요소-건너뛰기)
+-	[매핑](#매핑)
+	-	[스트림의 각 요소에 함수 적용하기](#스트림의-각-요소에-함수-적용하기)
+	-	[스트림 평면화](#스트림-평면화)
+-	[검색과 매칭](#검색과-매칭)
+	-	[프레디케이트가 적어도 한 요소와 일치하는지 확인](#프레디케이트가-적어도-한-요소와-일치하는지-확인)
+	-	[프레디케이트가 모든 요소와 일치하는지 검사](#프레디케이트가-모든-요소와-일치하는지-검사)
+	-	[noneMatch](#nonematch)
+	-	[요소 검색](#요소-검색)
+	-	[첫 번째 요소 찾기](#첫-번째-요소-찾기)
+-	[리듀싱](#리듀싱)
+	-	[요소의 합](#요소의-합)
+	-	[초기값 없음](#초기값-없음)
+	-	[최댓값과 최솟값](#최댓값과-최솟값)
+-	[전체 연산 요약](#전체-연산-요약)
+-	[숫자형 스트림](#숫자형-스트림)
+	-	[기본 특화 스트림](#기본-특화-스트림)
+	-	[숫자 스트림으로 매핑](#숫자-스트림으로-매핑)
+	-	[객체 스트림으로 복원](#객체-스트림으로-복원)
+	-	[기본값: OptionalInt](#기본값-optionalint)
+	-	[숫자 범위](#숫자-범위)
+-	[스트림 만들기](#스트림-만들기)
+	-	[값으로 스트림 만들기](#값으로-스트림-만들기)
+	-	[배열로 스트림 만들기](#배열로-스트림-만들기)
+	-	[파일로 스트림 만들기](#파일로-스트림-만들기)
+	-	[함수로 무한 스트림 만들기](#함수로-무한-스트림-만들기)
+-	[요약](#요약)
+
+	### 필터링과 슬라이싱
 
 #### 프레디케이트로 필터링
 
@@ -252,3 +287,64 @@ int max = maxCalories.orElse(1);
 // 1부터 100까지의 짝수 스트림
 IntStream evenNumbers = IntStream.rangeClosed(1,100).filter (n-> n % 2 == 0);
 ```
+
+### 스트림 만들기
+
+#### 값으로 스트림 만들기
+
+```java
+// 모든 문자열을 대문자로 변환 후 문자열 하나씩 출력
+Stream<String> stream = Stream.of( "Java 8", "Lambdas", "In", "Action");
+stream.map(String::toUpperCase).forEach(System.out::println);
+
+// 스트림을 비울 수 있다.
+Stream<String> emptyStream = Stream.empty();
+```
+
+#### 배열로 스트림 만들기
+
+```java
+int [] numbers = {2, 3, 5, 7, 11, 13};
+int sum = Arrays.stream(numbers).sum();
+```
+
+#### 파일로 스트림 만들기
+
+```java
+long uniqueWords = 0;
+try (Stream<String) lines = Files.lines(Paths .get("data.txt"), Charset.defaultCharset()))
+{
+  uniqueWords = lines.flatMap(line -> Arrays.stream(line.split(" ")))
+                            .distinct()
+                            .count();
+}
+catch (IOException e)
+{
+}
+```
+
+#### 함수로 무한 스트림 만들기
+
+```java
+// iterate
+Stream.iterate(0, n -> n + 2)
+                  .limit(10)
+                  .forEach(System.out::println);
+
+// generate
+Stream.generate(Math::Random)
+                  .limit(5)
+                  .forEach(System.out::println);
+```
+
+### 요약
+
+-	스트림 API를 이용하면 복잡한 데이터 처리 질의를 표현할 수 있다. [전체 연산 요약](#전체-연산-요약)은 자주 사용하는 스트림 연산을 보여준다.
+-	filter, distinct, skip, limit 메서드로 스트림을 필터링하거나 자를 수 있다.
+-	map, flatMap 메서드로 스트림의 요소를 추출하거나 변환할 수 있다.
+-	findFirst, findAny 메서드로 스트림의 요소를 검색할 수 있다. allMatch, noneMatch, anyMatch 메서드를 이용해서 주어진 프레디케이트와 일치하는 요소를 스트림에서 검색할 수 있다.
+-	이들 메서드는 쇼트서킷, 즉 결과를 찾는 즉시 반환하며, 전체 스트림을 처리하지는 않는다.
+-	reduce 메서드로 스트림의 모든 요소를 반복 조합하며 값을 도출할 수 있다. 예를 들어 reduce로 스트림의 최댓값이나 모든 요소의 합계를 계산할 수 있다. filter, map 등은 상태를 저장하지 않는 `상태 없는 연산`이다. reduce 같은 연산은 값을 계산하는데 필요한 상태를 저장한다. sorted, distinct 등의 메서드는 새로운 스트림을 반환하기에 앞서 스트림의 모든 요서를 버퍼에 저장해야 한다. 이런 메서드를 `상태 있는 연산`이라고 부른다.
+-	IntStream, DoubleStream, LongStream은 기본형 특화 스트림이다. 이들 연산은 각각의 기본형에 맞게 특화되어 있다.
+-	컬렉션뿐 아니라 값, 배열, 파일, iterate와 generate 같은 메서드로도 스트림을 만들 수 있다.
+-	크기가 정해지지 않은 스트림을 무한 스트림이라고 한다.
