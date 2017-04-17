@@ -99,3 +99,25 @@ OTHER={DIET=[rice, seasonal fruit], NORMAL=[french fries, pizza]}}
 Map<Dish.Type, Long> typesCount = menu.stream( ).collect(groupingBy(Dish::getType, counting()));
 // {MEAT=3, FISH=2 , OTHER=4}
 ```
+
+### 분할
+
+-	분할은 `분할함수`라 불리는 프레디케이트를 분류 함수로 사용하는 특수한 그룹화 기능이다.
+
+```java
+Map<Boolean, List<Dish>> partitionedMenu =
+                menu.stream().collect(partitioningBy(Dish::isVegetarian));
+```
+
+#### 분할의 장점
+
+-	참, 거짓 두 가지 요소의 스티림 리스트를 모두 유지한다는 것이 분할의 장점이다.
+-	두 번째 인수로 전달할 수 있는 오버로드 된 버전도 가능하다.
+
+```java
+Map<Boolean, Map<Dish.Type , List<Dish>>> vegetarianDishesByType =
+menu.stream().collect(
+                    partitioningBy(Dish::isVegetarian,
+                    groupingBy(Dish::getType)));
+// {false={FISH=[prawns, salmon], MEAT=[pork, beef, chicken]},true={OTHER=[french fries, rice, seasonfruit , pizza]}}
+```
