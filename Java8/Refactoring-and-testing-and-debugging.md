@@ -248,3 +248,72 @@ public static void main(String[] args) {
 #### 의무 체인
 
 -	작업처리 객체의 체인(동작 체인 등)을 만들 때는 의무 체인 패턴을 사용한다. 한 객체가 어떤 작업을 처리한 다음에 다른 객체로 결과를 전달하고, 다른 객체도 해야 할 작업을 처리한 다음에 또 다른 객체로 전달하는 식이다.
+
+-	andThen 메서드로 이들 함수를 조합해서 체인을 만들 수 있다.
+
+-	**람다 표현식 사용**
+
+```java
+UnaryOperator<String> headerProcessing =
+        (String text) -> "From Raoul, Mario and Alan: " + text;
+UnaryOperator<String> spellCheckerProcessing =
+        (String text) -> text.replaceAll("labda", "lambda");
+Function<String, String> pipeline = headerProcessing.andThen(spellCheckerProcessing);
+String result2 = pipeline.apply("Aren't labdas really sexy?!!");
+System.out.println(result2);
+```
+
+#### 팩토리
+
+```java
+static private class ProductFactory {
+    public static Product createProduct(String name){
+        switch(name){
+            case "loan": return new Loan();
+            case "stock": return new Stock();
+            case "bond": return new Bond();
+            default: throw new RuntimeException("No such product " + name);
+        }
+    }
+
+    public static Product createProductLambda(String name){
+        Supplier<Product> p = map.get(name);
+        if(p != null) return p.get();
+        throw new RuntimeException("No such product " + name);
+    }
+}
+
+Product p1 = ProductFactory.createProduct("loan");
+```
+
+-	**람다 표현식 사용**
+
+```java
+Supplier<Product> loanSupplier = Loan::new;
+Product p2 = loanSupplier.get();
+
+final static private Map<String, Supplier<Product>> map = new HashMap<>();
+static {
+    map.put("loan", Loan::new);
+    map.put("stock", Stock::new);
+    map.put("bond", Bond::new);
+}   
+
+public static Product createProductLambda(String name){
+        Supplier<Product> p = map.get(name);
+        if(p != null) return p.get();
+        throw new RuntimeException("No such product " + name);
+}           
+```
+
+### 람다 테스팅
+
+#### 보이는 람다 표현식의 동작 테스팅
+
+-	생성된 인스턴스의 동작으로 람다 표현식 테스트할 수 있다.
+
+#### 람다를 사용하는 메서드의 동작에 집중하라
+
+#### 복잡한 람다를 개별 메서드로 분할하기
+
+-	람다 표현식을 메서드 레퍼런스
