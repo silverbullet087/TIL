@@ -316,4 +316,50 @@ public static Product createProductLambda(String name){
 
 #### 복잡한 람다를 개별 메서드로 분할하기
 
--	람다 표현식을 메서드 레퍼런스
+-	람다 표현식을 메서드 레퍼런스로 바꾸는 것이다. 일반 메서드를 테스트하듯이 람다 표현식을 테스트 할 수 있다.
+
+#### 고차원 함수 테스팅
+
+-	메서드가 람다를 인수로 받는다면 다른 람다로 메서드의 동작을 테스트할 수 있다.
+
+### 디버깅
+
+#### 스택 트레이스 확인
+
+-	유감스럽게도 람다 표현식은 이름이 없기 때문에 조금 복잡한 스택 트레이스가 생성된다.
+
+#### 정보 로깅
+
+-	스트림 파이프라인에 적용된 각각의 연산(map, filter, limit)이 어떤 결과를 도출하는지 확인할 수 있다. 바로 `peek`이라는 스트림 연산을 활용할 수 있다.
+
+```java
+List<Integer> result = Stream.of(2, 3, 4, 5)
+        .peek(x -> System.out.println("taking from stream: " + x)).map(x -> x + 17)
+        .peek(x -> System.out.println("after map: " + x)).filter(x -> x % 2 == 0)
+        .peek(x -> System.out.println("after filter: " + x)).limit(3)
+        .peek(x -> System.out.println("after limit: " + x)).collect(toList());
+
+//	taking from stream: 2
+//	after map: 19
+//	taking from stream: 3
+//	after map: 20
+//	after filter: 20
+//	after limit: 20
+//	taking from stream: 4
+//	after map: 21
+//	taking from stream: 5
+//	after map: 22
+//	after filter: 22
+//	after limit: 22
+```
+
+### 요약
+
+-	람다 표현식으로 가독성이 좋고 더 유연한 코드를 만들 수 있다.
+-	익명 클래스는 람다 표현식으로 바꾸는 것이 좋다. 하지만 이때 this, 변수 새도 등 미묘하게 의미상 다른 내용이 있음을 주의하자.
+-	반복적으로 컬렉션을 처리하는 루틴은 스트림 API로 대체할 수 있을지 고려하는 것이 좋다.
+-	람다 표현식으로 전략, 템플릿 메서드, 옵저버, 의무 체인, 팩토리 등의 객체지향 디자인 패턴에서 발생하는 불필요한 코드를 제거할 수 있다.
+-	람다 표현식도 단위 테스트를 수행할 수 있다. 하지만 람다 표현식 자체를 테스트하는 것 보다는 람다 표현식이 사용되는 메서드의 동작을 테스트하는 것이 바람직하다.
+-	복잡한 람다 표현식은 일반 메서드로 재구현할 수 있다.
+-	람다 표현식을 사용하면 스택 트레이스를 이해하기 어려워진다.
+-	스트림 파이프라인에서 요소를 처리할 때 peek 메서드로 중간값을 확인할 수 있다.
