@@ -41,3 +41,5 @@ Summary
 	-	[스트림으로 데이터 수집](Java8/Gathering-data-into-streams.md)
 	-	[병렬 데이터 처리와 성능](Java8/Parallel-data-processing-and-performance.md)
 	-	[리팩토링, 테스팅, 디버깅](Java8/Refactoring-and-testing-and-debugging.md)
+	-	[디폴트 메서드](Java8/Default-Method.md)
+	-	[null 대신 Optional](Java8/Optional-instead-of-null.md)
