@@ -19,3 +19,7 @@
 ![Collections-2](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzSFFfM3ZqNjZ1V28)
 
 ![Optional 클래스의 메서드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzaW1HZlJEblRoVmc)
+
+![Duration과 Period 클래스가 공통으로 제공하는 메서드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzei1DODh5ZGVPdjA)
+
+![특정 시점을 표현하는 날짜 시간 클래스의 공통 메서드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzcWdpSUJmRXZIZzQ)

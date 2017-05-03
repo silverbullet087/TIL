@@ -83,3 +83,31 @@ Period tenDays = Period.between(LocalDate.of(2014, 3, 8), LocalDate.of(2014, 3, 
 -	Duration과 Period 클래스가 공통으로 제공하는 메서드
 
 ![Duration과 Period 클래스가 공통으로 제공하는 메서드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzei1DODh5ZGVPdjA)
+
+### 날짜 조정, 파싱, 포매팅
+
+-	withAttribute 메서드로 기존 LocalDate를 바꿀 수 있다.
+
+```java
+LocalDate date = LocalDate.of(2014, 3, 18);
+date = date.withYear(2017);
+date = date.withDayOfMonth(25);
+date = date.with(ChronoField.MONTH_OF_YEAR);
+```
+
+-	지정된 시간을 추가하거나 뺄 수 있다.
+
+```java
+LocalDate date1 = LocalDate.of(2014, 3, 18);
+// 2017-05-03
+LocalDate date2 = date1.plusWeeks(1);
+// 2017-05-10
+LocalDate date3 = date2.minusYears(3);
+// 2014-05-10
+LocalDate date4 = date3.plus(6, ChronoUnit.MONTHS);
+// 2014-11-10
+```
+
+-	특정 시점을 표현하는 날짜 시간 클래스의 공통 메서드
+
+![특정 시점을 표현하는 날짜 시간 클래스의 공통 메서드](http://drive.google.com/uc?export=view&id=0ByLqiEM75qEzcWdpSUJmRXZIZzQ)
