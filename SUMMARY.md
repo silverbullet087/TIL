@@ -45,3 +45,5 @@ Summary
 	-	[null 대신 Optional](Java8/Optional-instead-of-null.md)
 	-	[CompletableFuture 조합할 수 있는 비동기 프로그래밍](Java8/CompletableFuture.md)
 	-	[새로운 날짜와 시간 API](Java8/New-Date-and-Time-API.md)
+	-	[함수형 관점으로 생각하기](Java8/Think-of-it-as-a-functional.md)
+	-	[함수형 프로그래밍 기법](Java8/Functional-Programming-Techniques.md)
