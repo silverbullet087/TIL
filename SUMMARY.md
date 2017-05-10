@@ -47,3 +47,4 @@ Summary
 	-	[새로운 날짜와 시간 API](Java8/New-Date-and-Time-API.md)
 	-	[함수형 관점으로 생각하기](Java8/Think-of-it-as-a-functional.md)
 	-	[함수형 프로그래밍 기법](Java8/Functional-Programming-Techniques.md)
+	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
