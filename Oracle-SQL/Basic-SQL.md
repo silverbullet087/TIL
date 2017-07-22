@@ -1,5 +1,5 @@
-Basic-SQL
----------
+Basic SQL
+=========
 
 ---
 
@@ -293,7 +293,7 @@ FROM scott;
 
 **WITH ADMIN OPTION을 사용하여 시스템권한 취소**
 
-WITH ADMIN OPTION을 사용하여 시스템권한을 부여했어도 시스템권한을 최소할 때는 연쇄적으로 취소 되지 않는다.
+WITH ADMIN OPTION을 사용하여 시스템권한을 부여했어도 시스템권한을 취소할 때는 연쇄적으로 취소 되지 않는다.
 
 시나리오
 
@@ -314,9 +314,199 @@ WITH ADMIN OPTION을 사용하여 시스템권한을 부여했어도 시스템�
 
 ##### 2.3.2. 객체 권한(Object Privileges)
 
+객체권한은 USER가 소유하고 있는 특정 객체를 다른 사용자들이 엑세스 하거나 조작 할 수 있게 하기 위해 생성한다.
+
+**객체권한(Object Privileges) 이란**
+
+-	테이블이나 뷰, 시퀀스, 프로시저, 함수, 또는 패키지 중 지정된 한 객체에 특별한 작업을 수행 할 수 있게 한다.
+-	객체 소유자는 다른 사용자에게 특정 객체권한을 부여할 수 있다.
+-	PUBLIC 으로 권한을 부여하면 회수할 때도 PUBLIC으로 해야 한다.
+-	기본적으로 소유한 객체에 대해서는 모든 권한이 자동적으로 획득된다.
+-	WITH ADMIN OPTION 옵션은 ROLE에 권한을 부여할 때는 사용할 수 없다.
+
+**객체에 따른 권한 목록 예**
+
+| 객체권한 | 테이블 | 뷰 | 시퀀스 | 프로시저 |
+|:---------|:-------|:---|:-------|:---------|
+| ALTER    | ○      |    | ○      |          |
+| DELETE   | ○      | ○  |        |          |
+| EXECUTE  |        |    |        | ○        |
+| INDEX    | ○      |    |        |          |
+| INSERT   | ○      | ○  |        |          |
+| SELECT   | ○      | ○  | ○      |          |
+
+**객체권한 부여 문법**
+
+위의 표에서 맨 왼쪽에 있는 ALTER, DELETE, EXECUTE.. 등은 object-privileges란에 오면 되고, 맨 윗줄에 있는 테이블, 뷰, 시퀸스, 프로시저 등은 ON 다음에 있는 Object에 입력하면 된다.
+
+![객체권한 부여 문법](http://www.gurubee.net/imgs/oracle/sql/O_Privilege.jpg)
+
+-	object_privilege : 부여할 객체권한의 이름
+-	object : 객체명
+-	user, role : 부여할 사용자 이름과 다른 데이터 베이스 역할 이름
+-	PUBLIC : 객체권한, 또는 데이터베이스 역할을 모든 사용자에게 부여할 수 있다.
+-	WITH GRANT OPTION : 권한을 부여 받은 사용자도 부여 받은 권한을 다른 사용자 또는 역할로 부여할 수 있게 된다.
+
+**객체권한 부여 예제**
+
+```SQL
+-- scott USER에게 emp테이블을 SELECT, INSERT할 수 있는 권한을 부여했다.
+-- scott USER도 다른 USER에게 그 권한을 부여 할 수 있다.
+GRANT SELECT, INSERT
+ON emp
+TO scott
+WITH GRANT OPTION;
+ 권한이 부여되었습니다.
+```
+
+**객체권한의 회수**
+
+![객체권한의 회수](http://www.gurubee.net/imgs/oracle/sql/O_Revoke.jpg)
+
+-	객체 권한의 철회는 그 권한을 부여한 부여자만이 수행할 수 있다.
+-	CASCADE CONSTRAINS : 이 명령어의 사용으로 참조 객체 권한에서 사용 된 참조 무결성 제한을 같이 삭제 할 수 있다.
+-	WITH GRANT OPTION 으로 객체 권한을 부여한 사용자의 객체 권한을 철회하면, 권한을 부여받은 사용자가 부여한 객체 권한 또한 같이 철회되는 **종속철회** 가 발생한다.
+
+**객체권한 회수 예제**
+
+```SQL
+-- scott USER에게 부여한 emp 테이블에 대한 SELECT, INSERT 권한 회수 예제
+-- 만약 scott USER가 다른 사용자에게 SELECT, INSERT권한을 부여했으면 그 권한들도 같이 회수가 된다.
+REVOKE SELECT, INSERT
+ON emp
+FROM scott;
+ 권한이 회수되었습니다.
+```
+
+**WITH GRANT OPTION을 사용하여 객체권한 회수**
+
+WITH GRANT OPTION을 사용하여 부여한 객체 권한을 취소하면 취소 작업이 연쇄적으로 수행 된다.
+
+시나리오 1. SCOTT가 STORM에게 WITH GRANT OPTION을 사용하여 emp 테이블의 SELECT 권한을 부여 한다. 2. STORM이 emp 테이블의 SELECT 권한을 TEST에게 부여 한다. 3. SCOTT가 STORM에게 부여한 emp 테이블의 SELECT 권한을 취소 한다.
+
+![시나리오](http://www.gurubee.net/imgs/oracle/sql/WithGrantOption.jpg)
+
+결과 - SCOTT가 STORM에게 부여한 emp 테이블에 대한 SELECT 권한을 취소하면, TEST USER가 emp 테이블을 SELECT할 수 있는 권한도 자동으로 취소가 된다.
+
+![결과](http://www.gurubee.net/imgs/oracle/sql/WithGrantOption2.jpg)
+
+**객체권한관련 데이터 사전**
+
+| 데이터 사전         | 설 명                                                                   |
+|:--------------------|:------------------------------------------------------------------------|
+| USER_TAB_PRIVS      | 객체권한의 소유자, 객체권한 부여자, 객체권한 피부여자를 볼수 있음       |
+| USER_TAB_PRIVS_MADE | 사용자가 부여한 모든 객체권한                                           |
+| USER_TAB_PRIVS_RECD | 사용자가 부여받은 모든 객체권한                                         |
+| USER_COL_PRIVS      | 객체권한의 소유자, 객체권한 부여자, 객체권한 피부여자의 컬럼의 객체권한 |
+| USER_COL_PRIVS_MADE | 사용자가 부여한 객체 컬럼에 대한 모든 객체권한                          |
+| USER_COL_PRIVS_RECD | 사용자가 부여받은 객체 컬럼에 대한 모든 객체권한                        |
+
+<br/>
+
 ##### 2.3.3. 롤(Role)
 
+롤(ROLE) 이란 사용자에게 허가 할 수 있는 권한들의 집합 이라고 할 수 있다.
+
+**롤(ROLE) 이란**
+
+-	ROLE을 이용하면 권한 부여와 회수를 쉽게 할 수 있다.
+-	ROLE은 CREATE ROLE 권한을 가진 USER에 의해서 생성 된다.
+-	한 사용자가 여러개의 ROLE을 ACCESS 할 수 있고, 여러 사용자에게 같은 ROLE을 부여할 수 있다.
+-	시스템 권한을 부여하고, 취소할 때와 동일한 명령을 사용하여 사용자에게 부여하고, 취소한다.
+-	사용자는 ROLE에 ROLE을 부여할 수 있다.
+-	오라클 데이터베이스를 설치하면 기본적으로 CONNECT, RESOURCE, DBA ROLE이 제공 된다.
+
+아래의 그림처럼 DBA가 유저들에게 권한을 부여할 때 일일이 권한 하나하나씩을 지정을 한다면 몹시 불편할 것이다. DBA가 USER의 역할에 맞도록 ROLE을 생성하여서 ROLE만 유저에게 지정을 한다면 보다 효율적으로 유저들의 권한을 관리 할 수 있다.
+
+| ROLE을 사용하지 않고 권한부여                                                       | ROLE을 사용하여 권한부여                                                       |
+|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|
+| ![ROLE을 사용하지 않고 권한부여](http://www.gurubee.net/imgs/oracle/sql/roll_1.jpg) | ![ROLE을 사용하여 권한부여](http://www.gurubee.net/imgs/oracle/sql/roll_2.jpg) |
+
+**ROLE 생성 문법**
+
+![ROLE 생성 문법](http://www.gurubee.net/imgs/oracle/sql/roll_3.jpg)
+
+**ROLE 부여 예제**
+
+ROLE의 부여 순서 1. ROLE의 생성 : CREATE ROLE manager 2. ROLE의 권한 부여 : GRANT create session, create table TO manager 3. ROLE을 사용자 또는 ROLE에게 부여 : GRANT manager TO scott, test
+
+```SQL
+-- ROLE을 생성 합니다.
+CREATE ROLE manager;
+-- ROLE에 권한을 부여 합니다.
+GRANT create session, create table TO manager;
+
+-- 권한이 부여된ROLE을 USER나 ROLE에 부여 합니다.
+GRANT manager TO scott, test;
+```
+
+**ROLE 관련 데이터 사전**
+
+| 데이터 사전         | 설 명                                           |
+|:--------------------|:------------------------------------------------|
+| ROLE_SYS_PRIVS      | ROLE에 부여된 시스템 권한                       |
+| ROLE_TAB_PRIVS      | ROLE에 부여된 테이블 권한                       |
+| USER_ROLE_PRIVS     | 현재 사용자가 ACCESS할 수 있는 ROLE             |
+| USER_TAB_PRIVS_MADE | 현재 사용자의 객체에 부여한 객체 권한           |
+| USER_TAB_PRIVS_RECD | 현재 사용자의 객체에 부여된 객체 권한           |
+| USER_COL_PRIVS_MADE | 현재 사용자 객체의 특정 컬럼에 부여한 객체 권한 |
+| USER_COL_PRIVS_RECD | 현재 사용자 객체의 특정 컬럼에 부여된 객체 권한 |
+
+<br/>
+
 ##### 2.3.4. 오라클 데이터베이스를 설치하면 기본적으로 생성되는 Role
+
+오라클 데이터베이스를 생성하면 기본적으로 몇 가지의 ROLE이 생성 된다. DBA_ROLES 데이터 사전을 통하여 미리 정의된 ROLE을 조회 할 수 있다.
+
+```SQL
+SELECT * FROM DBA_ROLES;
+
+ROLE                      PASSWORD
+----------------------    -----------
+CONNECT                   NO
+RESOURCE                  NO
+DBA                       NO
+SELECT_CATALOG_ROLE       NO
+EXECUTE_CATALOG_ROLE      NO
+DELETE_CATALOG_ROLE       NO
+EXP_FULL_DATABASE         NO
+IMP_FULL_DATABASE         NO
+....
+
+이 외에도 많이 ROLE이 존재하는데, 가장 많이 사용하는 세 가지만 설명 하겠다.
+```
+
+**CONNECT ROLE**
+
+-	오라클에 접속 할 수 있는 세션 생성 및 테이블 생성하거나 조회 할 수 있는 가장 일반적인 권한들로 이루어져 있다.
+-	CONNECT ROLE이 없으면 유저를 생성하고서도 Oracle에 접속 할 수가 없다.
+-	아래의 명령어로 CONNECT ROLE이 어떤 권한으로 이루어져 있는지 확인 할 수 있다.
+
+```SQL
+SQL>SELECT grantee, privilege
+    FROM DBA_SYS_PRIVS
+    WHERE grantee = 'CONNECT';
+
+GRANTEE     PRIVILEGE
+----------- ---------------------
+CONNECT     ALTER SESSION
+CONNECT     CREATE CLUSTER
+CONNECT     CREATE DATABASE LINK
+CONNECT     CREATE SEQUENCE
+CONNECT     CREATE SESSION
+...
+```
+
+RESORCE ROLE
+
+-	Store Procedure나 Trigger와 같은 PL/SQL을 사용할 수 있는 권한 들로 이루어져 있다.
+-	PL/SQL을 사용하려면 RESOURCE ROLE을 부여해야 한다.
+-	유저를 생성하면 일반적으로 CONNECT, RESOURCE롤을 부여한다.
+
+**DBA ROLE**
+
+-	모든 시스템 권한이 부여된 ROLE이다.
+-	DBA ROLE은 데이터베이스 관리자에게만 부여해야 한다.
 
 ### 3. 테이블의 생성과 수정 그리고 삭제
 
