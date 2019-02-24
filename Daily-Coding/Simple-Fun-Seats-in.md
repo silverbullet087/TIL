@@ -83,6 +83,8 @@ public class Kata {
 }
 ```
 
+> 다른 해결책과 비교해 봤을때 괜찮은 해결책이라고 생각한다.
+
 ### @Krzysiek014 Solution
 
 ```java
@@ -97,6 +99,8 @@ public class Kata {
 }
 ```
 
+> 내가 코딩한 것과 비슷한데 이 해결책은 입력값 체크 로직이 누락되어 있다.
+
 ### @wilkotom Solution
 
 ```java
@@ -109,6 +113,8 @@ public class Kata {
   }
 }
 ```
+
+> 이것도 마찬가지로 나와 비슷하고 입력값 체크 로직이 누락되어 있다.
 
 ### 결론
 
