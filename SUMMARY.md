@@ -1,7 +1,6 @@
 Summary
 =======
 
--	[일일코딩](Daily-Coding/README.md)
 -	[리펙토링](Refactoring/README.md)
 	-	[구린내와 탈취 기법](Refactoring/burning-and-deodorizing-techniques.md)
 	-	[메서드 정리](Refactoring/method-cleanup.md)
@@ -51,3 +50,5 @@ Summary
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
 -	[자바스크립트와 jQuery 완전정복](javascript-and-jQuery-complete-conquest/README.md)
 	-	[자바스크립트 클래스 기초](javascript-and-jQuery-complete-conquest/JavaScript-class-basics.md)
+-	[일일코딩](Daily-Coding/README.md)
+	-	[[8 kyu]Simple Fun #1: Seats in](Daily-Coding/Simple-Fun-Seats-in.md)
