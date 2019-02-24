@@ -51,4 +51,5 @@ Summary
 -	[자바스크립트와 jQuery 완전정복](javascript-and-jQuery-complete-conquest/README.md)
 	-	[자바스크립트 클래스 기초](javascript-and-jQuery-complete-conquest/JavaScript-class-basics.md)
 -	[일일코딩](Daily-Coding/README.md)
+	-	[[8 kyu]Total amount of points Theater](Daily-Coding/Total-amount-of-points.md)
 	-	[[8 kyu]Simple Fun #1: Seats in](Daily-Coding/Simple-Fun-Seats-in.md)
