@@ -48,8 +48,6 @@ Summary
 	-	[함수형 관점으로 생각하기](Java8/Think-of-it-as-a-functional.md)
 	-	[함수형 프로그래밍 기법](Java8/Functional-Programming-Techniques.md)
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
--	[자바스크립트와 jQuery 완전정복](javascript-and-jQuery-complete-conquest/README.md)
-	-	[자바스크립트 클래스 기초](javascript-and-jQuery-complete-conquest/JavaScript-class-basics.md)
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
 	-	[[8 kyu]Abbreviate a Two Word Name](Daily-Coding-Java/Abbreviate-a-Two-Word-Name.md)
