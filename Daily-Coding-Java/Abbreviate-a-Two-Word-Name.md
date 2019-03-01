@@ -62,7 +62,7 @@ public class AbbreviateTwoWords {
 
 > 와우! 정규표현식은 위대하다. 한줄로 코딩은 끝나는구나. 아직 정규표현식을 제대로 공부를 하지 못해서 코딩하기엔 무리지만 정규표현식이 정말 대단한 것 같다. 나중에 꼭 공부해야겠다.
 
-### @ Solution
+### @Velimir10 Solution
 
 ```java
 public class AbbreviateTwoWords {
@@ -77,7 +77,7 @@ public class AbbreviateTwoWords {
 
 > 난 그냥 String + "." String 으로 문자를 붙였는데 concat을 쓸 것은 생각을 못했다. 아무래서 성능상 String 을 따로 써서 String 객체가 각각 생성 되게 하는 것보다. .concat으로 붙이는 것이 더 좋은 방법 같다.
 
-### @ Solution
+### @scottyboutin Solution
 
 ```java
 import java.util.Arrays;
