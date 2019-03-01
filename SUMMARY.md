@@ -51,7 +51,15 @@ Summary
 -	[자바스크립트와 jQuery 완전정복](javascript-and-jQuery-complete-conquest/README.md)
 	-	[자바스크립트 클래스 기초](javascript-and-jQuery-complete-conquest/JavaScript-class-basics.md)
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
+
+	-	[[8 kyu]Abbreviate a Two Word Name](Daily-Coding-Java/Abbreviate-a-Two-Word-Name.md)
 	-	[[8 kyu]Total amount of points Theater](Daily-Coding-Java/Total-amount-of-points.md)
 	-	[[8 kyu]Simple Fun #1: Seats in](Daily-Coding-Java/Simple-Fun-Seats-in.md)
+
 -	[일일코딩-Javascript](Daily-Coding-Javascript/README.md)
+
+	-	[[8 kyu]What's up next?](Daily-Coding-Javascript/What's-up-next.md)
+
 -	[일일코딩-SQL](Daily-Coding-SQL/README.md)
+
+	-	[[8 kyu]Keep Hydrated!](Daily-Coding-SQL/Keep-Hydrated.md)
