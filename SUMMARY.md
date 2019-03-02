@@ -50,14 +50,18 @@ Summary
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
+	-	[[8 kyu]Sum of positive](Daily-Coding-Java/Sum-of-positive.md)
 	-	[[8 kyu]Abbreviate a Two Word Name](Daily-Coding-Java/Abbreviate-a-Two-Word-Name.md)
 	-	[[8 kyu]Total amount of points Theater](Daily-Coding-Java/Total-amount-of-points.md)
 	-	[[8 kyu]Simple Fun #1: Seats in](Daily-Coding-Java/Simple-Fun-Seats-in.md)
 
 -	[일일코딩-Javascript](Daily-Coding-Javascript/README.md)
 
+	-	[[8 kyu]Who is going to pay for the wall?](Daily-Coding-Javascript/Who-is-going-to-pay-for-the-wall.md)
 	-	[[8 kyu]What's up next?](Daily-Coding-Javascript/What's-up-next.md)
 
 -	[일일코딩-SQL](Daily-Coding-SQL/README.md)
 
+	-	[[7 kyu]SQL with Street Fighter: Total Wins](Daily-Coding-SQL/sql-with-street-fighter-total-wins.md)
+	-	[[8 kyu]Adults only (SQL for Beginners #1)](Daily-Coding-SQL/adults-only-sql-for-beginners-number-1.md)
 	-	[[8 kyu]Keep Hydrated!](Daily-Coding-SQL/Keep-Hydrated.md)
