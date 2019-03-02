@@ -1,4 +1,4 @@
-Daily Codewars #2019-03-01
+Daily Codewars #2019-03-02
 --------------------------
 
 ### Question
