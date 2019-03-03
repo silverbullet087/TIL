@@ -50,7 +50,7 @@ Summary
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
-	-	[[8 kyu]If you can't sleep, just count sheep!!](Daily-Coding-Javaif-you-cant-sleep-just-count-sheep.md)
+	-	[[8 kyu]If you can't sleep, just count sheep!!](Daily-Coding-Java/if-you-cant-sleep-just-count-sheep.md)
 	-	[[8 kyu]Sum of positive](Daily-Coding-Java/Sum-of-positive.md)
 	-	[[8 kyu]Abbreviate a Two Word Name](Daily-Coding-Java/Abbreviate-a-Two-Word-Name.md)
 	-	[[8 kyu]Total amount of points Theater](Daily-Coding-Java/Total-amount-of-points.md)
