@@ -58,14 +58,6 @@ public class Bob {
 
 > @shadowmanos 과 동일한 방법이다.
 
-### @ Solution
-
-```java
-
-```
-
-> 1
-
 ### 결론
 
 -	1
