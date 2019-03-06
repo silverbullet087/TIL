@@ -50,6 +50,9 @@ Summary
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
+	-	[[8 kyu]A Strange Trip to the Market](Daily-Coding-Java/a-strange-trip-to-the-market.md)
+	-	[[8 kyu]DNA to RNA Conversion](Daily-Coding-Java/dna-to-rna-conversion.md)
+	-	[[8 kyu]Will there be enough space?](Daily-Coding-Java/will-there-be-enough-space.md)
 	-	[[8 kyu]If you can't sleep, just count sheep!!](Daily-Coding-Java/if-you-cant-sleep-just-count-sheep.md)
 	-	[[8 kyu]Sum of positive](Daily-Coding-Java/Sum-of-positive.md)
 	-	[[8 kyu]Abbreviate a Two Word Name](Daily-Coding-Java/Abbreviate-a-Two-Word-Name.md)
