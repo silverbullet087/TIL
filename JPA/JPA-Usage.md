@@ -83,6 +83,20 @@ public interface UserRepository extends Repository<User, Long> {
 select u from User u where u.emailAddress = ?1 and u.lastname = ?2
 ```
 
+#### 쿼리 만드는 방법
+
+-	리턴타입 {접두어}{도입부}By{프로퍼티 표현식}(조건식)[(And|Or){프로퍼티 표현식}(조건식)]{정렬 조건} (매개변수)
+
+| 각부분          | 매소드명                                                        |
+|:----------------|:----------------------------------------------------------------|
+| 접두어          | Find, Get, Query, Count, ...                                    |
+| 도입부          | Distinct, First(N), Top(N)                                      |
+| 프로퍼티 표현식 | Person.Address.ZipCode => find(Person)ByAddress_ZipCode(...)    |
+| 조건식          | IgnoreCase, Between, LessThan, GreaterThan, Like, Contains, ... |
+| 정렬 조건       | OrderBy{프로퍼티}Asc                                            |
+| 리턴 타입       | E, Optional<E>, List<E>, Page<E>, Slice<E>, Stream<E>           |
+| 매개변수        | Pageable, Sort                                                  |
+
 -	지원하는 쿼리 키워드 메소드명
 
 | Keyword           | Sample                                                  | JPQL snippet                                                   |
@@ -112,6 +126,35 @@ select u from User u where u.emailAddress = ?1 and u.lastname = ?2
 | FALSE             | findByActiveFalse()                                     | … where x.active = false                                       |
 | IgnoreCase        | findByFirstnameIgnoreCase                               | … where UPPER(x.firstame) = UPPER(?1)                          |
 
+#### 기본예제
+
+```java
+//기본 예제
+
+List<Person> findByEmailAddressAndLastname(EmailAddress emailAddress, String lastname);
+// distinct
+List<Person> findDistinctPeopleByLastnameOrFirstname(String lastname, String firstname);
+List<Person> findPeopleDistinctByLastnameOrFirstname(String lastname, String firstname);
+// ignoring case
+List<Person> findByLastnameIgnoreCase(String lastname);
+// ignoring case
+List<Person> findByLastnameAndFirstnameAllIgnoreCase(String lastname, String firstname);
+
+//정렬
+
+List<Person> findByLastnameOrderByFirstnameAsc(String lastname);
+List<Person> findByLastnameOrderByFirstnameDesc(String lastname);
+
+//페이징
+
+Page<User> findByLastname(String lastname, Pageable pageable);
+Slice<User> findByLastname(String lastname, Pageable pageable);
+List<User> findByLastname(String lastname, Sort sort);
+List<User> findByLastname(String lastname, Pageable pageable);
+
+
+```
+
 ### 4. Pageable
 
 #### 호출 샘플소스
@@ -136,8 +179,8 @@ public class UserController {
 
 | parameter | Header Two                                              |
 |:----------|:--------------------------------------------------------|
-| page      | 페이지 인지를 전달                                      |
-| size      | 한 페이지 사이                                          |
+| page      | 페이지 인지를 전달(0부터 시작)                          |
+| size      | 한 페이지 사이즈(기본값 20)                             |
 | sort      | 정렬정보를 전달. 예:sort=createdAt,desc&sort=userId,asc |
 
 ### 5. Entitiy간의 방향성
@@ -169,3 +212,8 @@ public class UserController {
 ![1:1](http://drive.google.com/uc?export=view&id=1dCbF8VWHi-K1k6b4gbFiSUQaKo2nezNc)
 
 -	[출처 : 양방향 관계 표 - siyoon210 블로그 - JPA Entity간의 연관관계(방향) 설정하기](https://siyoon210.tistory.com/27)
+
+### 10. JPA 프로그래밍: Fetch
+
+-	@OneToMany의 기본값은 Lazy
+-	@ManyToOne의 기본값은 Eager
