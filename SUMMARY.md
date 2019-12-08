@@ -34,6 +34,7 @@ Summary
 	-	[Decorator 패턴](design-pattern/Decorator-pattern.md)
 	-	[Visitor 패턴](design-pattern/Visitor-pattern.md)
 -	[자바 8](Java8/README.md)
+
 	-	[동작 파라미터화 코드 전달하기](Java8/Passing-the-behavior-parameterization-code.md)
 	-	[람다 표현식](Java8/Lambda-representation.md)
 	-	[스트림 소개](Java8/Introduction-to-streams.md)
@@ -48,6 +49,9 @@ Summary
 	-	[함수형 관점으로 생각하기](Java8/Think-of-it-as-a-functional.md)
 	-	[함수형 프로그래밍 기법](Java8/Functional-Programming-Techniques.md)
 	-	[OOP와 FP의 조화 : 자바8과 스칼라 비교](Java8/Java8-vs-Scala.md)
+
+-	[JPA 사용법](JPA/JPA-Usage.md)
+
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
 	-	[[8 kyu]Grasshopper - Summation](Daily-Coding-Java/grasshopper-summation.md)
