@@ -52,6 +52,8 @@ Summary
 
 -	[JPA 사용법](JPA/JPA-Usage.md)
 
+-	[Git/소스트리 사용법](Git/Guide.md)
+
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
 	-	[[8 kyu]Grasshopper - Summation](Daily-Coding-Java/grasshopper-summation.md)
@@ -74,3 +76,4 @@ Summary
 	-	[[7 kyu]SQL with Street Fighter: Total Wins](Daily-Coding-SQL/sql-with-street-fighter-total-wins.md)
 	-	[[8 kyu]Adults only (SQL for Beginners #1)](Daily-Coding-SQL/adults-only-sql-for-beginners-number-1.md)
 	-	[[8 kyu]Keep Hydrated!](Daily-Coding-SQL/Keep-Hydrated.md)
+
