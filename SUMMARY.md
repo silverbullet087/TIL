@@ -56,6 +56,7 @@ Summary
 
 	-	[Git/소스트리 사용법](Tool/SourceTreeGuide.md)
 	-	[Workbench 단축키](Tool/workbench.md)
+	-	[InteliJ 단축키](Tool/InteliJ.md)
 
 -	[일일코딩-Java](Daily-Coding-Java/README.md)
 
